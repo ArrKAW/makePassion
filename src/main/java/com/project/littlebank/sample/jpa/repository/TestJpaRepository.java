@@ -1,0 +1,9 @@
+package com.project.littlebank.sample.jpa.repository;
+
+import com.project.littlebank.sample.jpa.entity.TestExample;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TestJpaRepository extends JpaRepository<TestExample, String> {
+
+
+}
