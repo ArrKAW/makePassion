@@ -1,4 +1,4 @@
-package sample.jpa.entity;
+package com.project.littlebank.sample.jpa.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

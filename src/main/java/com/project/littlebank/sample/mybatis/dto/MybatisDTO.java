@@ -1,4 +1,4 @@
-package sample.mybatis.dto;
+package com.project.littlebank.sample.mybatis.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

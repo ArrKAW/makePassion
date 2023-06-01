@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UserSignupController {
-
+/*
     @Autowired
     UserService userService;
 
@@ -16,6 +16,6 @@ public class UserSignupController {
     public String signupdo(UserEntity userEntity){
 
         userService.signupUser(userEntity);
-        return "main"
-    }
+        return "main";
+    }*/
 }

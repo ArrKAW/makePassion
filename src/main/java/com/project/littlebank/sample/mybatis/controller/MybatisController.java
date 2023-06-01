@@ -1,4 +1,4 @@
-package sample.mybatis.controller;
+package com.project.littlebank.sample.mybatis.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import sample.mybatis.dto.MybatisDTO;
-import sample.mybatis.service.MybatisService;
+import com.project.littlebank.sample.mybatis.dto.MybatisDTO;
+import com.project.littlebank.sample.mybatis.service.MybatisService;
 
 @Controller
 @RequiredArgsConstructor

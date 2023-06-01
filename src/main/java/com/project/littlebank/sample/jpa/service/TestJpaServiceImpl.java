@@ -1,11 +1,12 @@
-package sample.jpa.service;
+package com.project.littlebank.sample.jpa.service;
 
+import com.project.littlebank.sample.jpa.entity.TestExample;
+import com.project.littlebank.sample.jpa.repository.TestJpaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sample.jpa.entity.TestExample;
-import sample.jpa.repository.TestJpaRepository;
+
 import java.util.Optional;
 
 @Service

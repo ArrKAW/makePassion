@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserSignupService {
-
+/*
     @Autowired
     UserRepository userRepository;
 
     public void signupUser(UserEntity userEntity){
         userEntity.setRole("USER");
         userRepository.save(userEntity);
-    }
+    }*/
 }

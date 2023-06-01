@@ -1,9 +1,9 @@
-package sample.mybatis.repository;
+package com.project.littlebank.sample.mybatis.repository;
 
+import com.project.littlebank.sample.mybatis.dto.MybatisDTO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import sample.mybatis.dto.MybatisDTO;
 
 @Mapper
 public interface MybatisRepository {
