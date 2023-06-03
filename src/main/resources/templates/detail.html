@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>password</th>
+    <th>adress1</th>
+    <th>PhoneNum</th>
+  </tr>
+  <tr>
+    <td th:text="${member.memberId}"></td>
+    <td th:text="${memder.memberName}"></td>
+    <td th:text="${memder.memberPassword}"></td>
+    <td th:text="${memder.memberAdress1}"></td>
+    <td th:text="${memder.memberPhoneNum}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
