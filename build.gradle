@@ -19,6 +19,7 @@ dependencies {
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	implementation 'org.json:json:20230227'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
 	//swagger-ui
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
