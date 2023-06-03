@@ -1,6 +1,6 @@
 package com.project.littlebank.domain.member.repository;
 
-import com.project.littleBank.entity.MemberEntity;
+import com.project.littlebank.domain.member.entity.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

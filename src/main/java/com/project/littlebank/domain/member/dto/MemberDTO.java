@@ -1,14 +1,9 @@
 package com.project.littlebank.domain.member.dto;
 
-import com.project.littleBank.entity.MemberEntity;
+import com.project.littlebank.domain.member.entity.MemberEntity;
 import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-
+@Data
 public class MemberDTO {
     private Long id;
     private String memberId;

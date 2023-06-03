@@ -1,7 +1,7 @@
 package com.project.littlebank.domain.member.controller;
 
-import com.project.littleBank.dto.MemberDTO;
-import com.project.littleBank.service.MemberService;
+import com.project.littlebank.domain.member.dto.MemberDTO;
+import com.project.littlebank.domain.member.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,6 +29,7 @@ public class MemberController {
         memberService.save(memberDTO);
         return "login";
     }
+
     @GetMapping("/member/login")
     public String loginForm() {
         return "login";
@@ -53,6 +54,7 @@ public class MemberController {
         model.addAttribute("updateMember", memberDTO);
         return "update";
     }
+
     @PostMapping("/member/update")
     public String update(@ModelAttribute MemberDTO memberDTO) {
         memberService.update(memberDTO);

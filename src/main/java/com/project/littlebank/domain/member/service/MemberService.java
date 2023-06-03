@@ -1,9 +1,9 @@
 package com.project.littlebank.domain.member.service;
 
 
-import com.project.littleBank.dto.MemberDTO;
-import com.project.littleBank.entity.MemberEntity;
-import com.project.littleBank.repository.MemberRepository;
+import com.project.littlebank.domain.member.dto.MemberDTO;
+import com.project.littlebank.domain.member.entity.MemberEntity;
+import com.project.littlebank.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
