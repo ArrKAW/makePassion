@@ -2,6 +2,7 @@ server:
   port: 8083
 
 spring:
+  main:allow-bean-definition-overriding: true
   profiles:
     active: local
   mvc:
@@ -11,7 +12,6 @@ spring:
     url: jdbc:oracle:thin:@//119.205.217.251:1521/orcl
     username: ill
     password: ill
-    driver-class-name: oracle.jdbc.driver.OracleDriver
   jpa:
     hibernate:
       #      절대로 건들지 안됌!!!!
@@ -45,5 +45,7 @@ mybatis:
     jdbc-type-for-null: varchar
     default-fetch-size: 500
   mapper-locations: mapper/*.xml
+
+
 
 
