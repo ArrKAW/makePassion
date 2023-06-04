@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class TestJpaServiceImpl implements TestJpaService{
+public class TestJpaServiceImpl implements com.project.littlebank.sample.jpa.service.TestJpaService {
 
     private final TestJpaRepository testJpaRepository;
 
