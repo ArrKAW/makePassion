@@ -12,6 +12,12 @@ public class PageController {
     }
 
 
+    @GetMapping("/sample")
+    public String sample(){
+        return "sample";
+    }
+
+
 
 
 }
