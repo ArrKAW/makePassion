@@ -1,12 +1,10 @@
-package com.project.littleBank.user.signup.jpa.service;
+package com.project.littlebank.user.signup.jpa.service;
 
-import com.project.littleBank.user.signup.jpa.entity.TestBankerUser;
+import com.project.littlebank.user.signup.jpa.dto.UserRequestDTO;
 
 
 public interface UserSignupService {
 
-    void SaveTestBankerUser(TestBankerUser testBankerUser);
-
-
+    void saveTestBankerUser(UserRequestDTO userRequestDTO);
 }
 
