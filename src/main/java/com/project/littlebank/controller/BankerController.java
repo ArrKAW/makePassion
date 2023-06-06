@@ -4,10 +4,12 @@ package com.project.littlebank.controller;
 import com.project.littlebank.dto.BankerDTO;
 import com.project.littlebank.service.BankerService;
 import com.project.littlebank.service.BankerServiceImpl;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 @Controller
 @RequestMapping("/banker")
@@ -38,6 +40,15 @@ public class BankerController {
             return "noAuthority";
         }
         return "bankerProfile";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET )
+    public String bankerLogout(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        if(session != null){
+            session.invalidate();
+        }
+        return "redirect:/banker/login";
     }
 
 }
