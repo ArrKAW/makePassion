@@ -19,33 +19,33 @@ public class QBanker extends EntityPathBase<Banker> {
 
     public static final QBanker banker = new QBanker("banker");
 
-    public final StringPath b_id = createString("b_id");
+    public final StringPath basicauth = createString("basicauth");
 
-    public final DateTimePath<java.util.Date> b_last_use_time = createDateTime("b_last_use_time", java.util.Date.class);
+    public final StringPath bid = createString("bid");
 
-    public final StringPath b_name = createString("b_name");
+    public final DateTimePath<java.util.Date> blastusetime = createDateTime("blastusetime", java.util.Date.class);
 
-    public final StringPath b_position = createString("b_position");
+    public final StringPath bname = createString("bname");
 
-    public final StringPath b_pwd = createString("b_pwd");
+    public final StringPath bposition = createString("bposition");
 
-    public final StringPath b_seq = createString("b_seq");
+    public final StringPath bpwd = createString("bpwd");
 
-    public final StringPath b_tel = createString("b_tel");
+    public final StringPath bseq = createString("bseq");
 
-    public final StringPath basic_auth = createString("basic_auth");
+    public final StringPath btel = createString("btel");
 
-    public final DateTimePath<java.util.Date> chg_date = createDateTime("chg_date", java.util.Date.class);
+    public final DateTimePath<java.util.Date> chgdate = createDateTime("chgdate", java.util.Date.class);
 
-    public final StringPath chg_id = createString("chg_id");
+    public final StringPath chgid = createString("chgid");
 
     public final StringPath dept = createString("dept");
 
-    public final DateTimePath<java.util.Date> reg_date = createDateTime("reg_date", java.util.Date.class);
+    public final DateTimePath<java.util.Date> regdate = createDateTime("regdate", java.util.Date.class);
 
-    public final StringPath reg_id = createString("reg_id");
+    public final StringPath regid = createString("regid");
 
-    public final StringPath user_use_yn = createString("user_use_yn");
+    public final StringPath useruseyn = createString("useruseyn");
 
     public QBanker(String variable) {
         super(Banker.class, forVariable(variable));
