@@ -2,13 +2,17 @@ package com.project.littlebank.entity;
 
 import com.project.littlebank.dto.BankerDTO;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "TESTBANKER")
+@Getter
 public class Banker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +46,7 @@ public class Banker {
     private String basicauth;
 
     public Banker(BankerDTO bankerDTO){
+        this.bseq = bankerDTO.getBankerSeq();
         this.bid = bankerDTO.getBankerId();
         this.bname = bankerDTO.getBankerName();
         this.bpwd = bankerDTO.getBankerPwd();

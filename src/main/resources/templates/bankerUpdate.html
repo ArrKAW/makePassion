@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<body>
+<div>
+  <form action="/banker/profile/update" method="post">
+    <div class="form-group">
+      <label>이름</label>
+      <input type="text" name="bankerName" th:value = "${banker.getBname()}">
+      <label>직책</label>
+      <input type="text" name="bankerPosition" th:value = "${banker.getBposition()}">
+      <label>전화번호</label>
+      <input type="text" name="bankerTel" th:value = "${banker.getBtel()}">
+      <label>부서</label>
+      <input type="text" name="banker_dept" th:value = "${banker.getDept()}">
+    </div>
+    <button type="submit">수정하기</button>
+  </form>
+</div>
+</body>
+</html>

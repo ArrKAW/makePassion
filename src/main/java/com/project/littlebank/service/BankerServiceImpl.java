@@ -3,6 +3,7 @@ package com.project.littlebank.service;
 import com.project.littlebank.dto.BankerDTO;
 import com.project.littlebank.entity.Banker;
 import com.project.littlebank.repository.BankerRepository;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,30 @@ public class BankerServiceImpl implements BankerService{
         if(findBanker == null){
             return false;
         }
-
-
         return true;
+    }
+
+    @Override
+    public Banker bankerProfile(String bankerId){
+
+        Banker findBanker = bankerRepository.findByBid(bankerId);
+
+        return findBanker;
+    }
+
+    @Override
+    public void bankerUpdate(String bankerId, BankerDTO bankerDTO){
+
+        Banker findBanker = bankerRepository.findByBid(bankerId);
+        BankerDTO updateBankerDTO = new BankerDTO(findBanker);
+
+        updateBankerDTO.setBankerName(bankerDTO.getBankerName());
+        updateBankerDTO.setBankerPosition(bankerDTO.getBankerPosition());
+        updateBankerDTO.setBankerTel(bankerDTO.getBankerTel());
+        updateBankerDTO.setBanker_dept(bankerDTO.getBanker_dept());
+
+        Banker upddateBanker = new Banker(updateBankerDTO);
+
+        bankerRepository.save(upddateBanker);
     }
 }

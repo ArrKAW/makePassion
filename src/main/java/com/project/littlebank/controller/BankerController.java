@@ -2,12 +2,14 @@ package com.project.littlebank.controller;
 
 
 import com.project.littlebank.dto.BankerDTO;
+import com.project.littlebank.entity.Banker;
 import com.project.littlebank.service.BankerService;
 import com.project.littlebank.service.BankerServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
@@ -44,11 +46,29 @@ public class BankerController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET )
     public String bankerLogout(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        if(session != null){
-            session.invalidate();
+        HttpSession isLogin = request.getSession(false);
+        if(isLogin != null){
+            isLogin.invalidate();
         }
         return "redirect:/banker/login";
+    }
+
+    @RequestMapping(value = "/profile/update", method = RequestMethod.GET)
+    public String bankerUpdatePage(HttpServletRequest request, HttpSession session, Model model){
+        HttpSession isLogin = request.getSession(false);
+        if(isLogin == null){
+            return "noAuthority";
+
+        }
+        Banker banker = bankerService.bankerProfile((String)session.getAttribute("loginId"));
+        model.addAttribute("banker", banker);
+        return "bankerUpdate";
+    }
+
+    @RequestMapping(value = "/profile/update", method = RequestMethod.POST)
+    public String bankerUpdate(HttpSession session, BankerDTO bankerDTO){
+        bankerService.bankerUpdate((String)session.getAttribute("loginId"), bankerDTO);
+        return "redirect:/banker/profile";
     }
 
 }

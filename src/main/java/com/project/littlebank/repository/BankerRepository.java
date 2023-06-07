@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BankerRepository extends JpaRepository<Banker, String> {
 
+    Banker findByBid(String bankerId);
     Banker findByBidAndBpwd(String bankerId, String bankerPwd);
+
 }
