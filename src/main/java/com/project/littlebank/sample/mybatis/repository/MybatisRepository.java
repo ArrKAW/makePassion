@@ -4,6 +4,7 @@ import com.project.littlebank.sample.mybatis.dto.MybatisDTO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface MybatisRepository {
@@ -20,5 +21,4 @@ public interface MybatisRepository {
     @Select("select a.aaa from aaa a" +
             " where a.bbb = #{bbb} ")
     String find2(String bbb);
-
 }

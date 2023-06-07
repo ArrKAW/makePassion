@@ -6,12 +6,14 @@
 </head>
 <body>
 <form action="/member/update" method="post">
-    <input type="hidden" th:value="${updateMember.id}" name="id"> <br>
-    아이디:<input type="text" th:value="${updateMember.memberId}" name="memberId" readonly> <br>
-    전화번호: <input type="text" th:value="${updateMember.memberPhoneNum}" name="memberPhoneNum"> <br>
-    비밀번호: <input type="text" th:value="${updateMember.memberPassword}" name="memberPassword"> <br>
-    이름: <input type="text" th:value="${updateMember.memberName}" name="memberName"> <br>
-    주소: <input type="text" th:value="${updateMember.memberAdress1}" name="memberAdress1"> <br>
+    <input type="hidden" th:value="${updateMember.cusNum}" name="cusNum"> <br>
+    이름: <input type="text" th:value="${updateMember.cusName}" name="cusName"> <br>
+    아이디:<input type="text" th:value="${updateMember.cusId}" name="cusId" readonly> <br>
+    비밀번호: <input type="text" th:value="${updateMember.cusPassword}" name="memberPassword"> <br>
+    주소1: <input type="text" th:value="${updateMember.cusAddr1}" name="cusAddr1"> <br>
+    주소1: <input type="text" th:value="${updateMember.cusAddr2}" name="cusAddr2"> <br>
+    전화번호: <input type="text" th:value="${updateMember.cusTel}" name="cusTel"> <br>
+    핸드폰: <input type="text" th:value="${updateMember.cusPhone}" name="cusPhone"> <br>
     <input type="submit" value="정보수정">
 </form>
 

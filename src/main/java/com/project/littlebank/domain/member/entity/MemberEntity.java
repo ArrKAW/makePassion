@@ -1,43 +1,45 @@
 package com.project.littlebank.domain.member.entity;
 
+
 import com.project.littlebank.domain.member.dto.MemberDTO;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.math.BigInteger;
 
 @Entity
-@Setter
+@Table
 @Getter
-@Table(name = "member_table")
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberEntity {
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_MEMBER_ENTITY")
+    @SequenceGenerator(name = "SEQ_MEMBER_ENTITY", sequenceName = "SEQ_MEMBER_ENTITY", allocationSize = 1)
+    private BigInteger cusNum;
+    private String cusName;
+    private String cusGrade;
+    private String cusId;
+    private String cusPassword;
+    private String cusAddr1;
+    private String cusAddr2;
+    private String cusTel;
+    private String cusPhone;
+    private String useYn;
 
-    private String memberEmail;
-    private String memberPassword;
-    private String memberId;
-    private String memberName;
-    private String memberAdress1;
-    private String memberPhoneNum;
+    public MemberEntity(MemberDTO memberDTO){
+        this.cusName = memberDTO.getUserName();
+        this.cusId = memberDTO.getUserId();
+        this.cusPassword = memberDTO.getUserPassword();
+        this.cusAddr1 = memberDTO.getUserAddr1();
+        this.cusAddr2 = memberDTO.getUserAddr2();
+        this.cusTel = memberDTO.getUserTel();
+        this.cusPhone = memberDTO.getUserPhone();
+    }
 
-    public static MemberEntity toMemberEntity(MemberDTO memberDTO) {
-        MemberEntity memberEntity = new MemberEntity();
-        memberEntity.setMemberId(memberDTO.getMemberId());
-        memberEntity.setMemberAdress1(memberDTO.getMemberAdress1());
-        memberEntity.setMemberPassword(memberDTO.getMemberPassword());
-        memberEntity.setMemberPhoneNum(memberDTO.getMemberPhoneNum());
-        memberEntity.setMemberName(memberDTO.getMemberName());
-        return memberEntity;
-    }
-    public static MemberEntity toUpdateMemberEntity(MemberDTO memberDTO) {
-        MemberEntity memberEntity = new MemberEntity();
-        memberEntity.setId(memberDTO.getId());
-        memberEntity.setMemberId(memberDTO.getMemberId());
-        memberEntity.setMemberAdress1(memberDTO.getMemberAdress1());
-        memberEntity.setMemberPassword(memberDTO.getMemberPassword());
-        memberEntity.setMemberPhoneNum(memberDTO.getMemberPhoneNum());
-        memberEntity.setMemberName(memberDTO.getMemberName());
-        return memberEntity;
-    }
 
 }

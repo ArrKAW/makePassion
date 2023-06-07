@@ -1,10 +1,9 @@
 package com.project.littlebank.domain.member.repository;
 
-import com.project.littlebank.domain.member.entity.MemberEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.project.littlebank.domain.member.dto.MemberDTO;
+import org.apache.ibatis.annotations.Mapper;
 
-import java.util.Optional;
-
-public interface MemberRepository extends JpaRepository<MemberEntity, Long> {
-    Optional<MemberEntity> findByMemberId(String memberId);
+@Mapper
+public interface MemberRepository {
+    public MemberDTO getSelectOne(MemberDTO memberDTO)throws Exception;
 }

@@ -1,26 +1,17 @@
 package com.project.littlebank.domain.member.dto;
 
-import com.project.littlebank.domain.member.entity.MemberEntity;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class MemberDTO {
-    private Long id;
-    private String memberId;
-    private String memberPassword;
-    private String memberName;
-    private String memberAdress1;
-    private String memberPhoneNum;
+    private String userName;
+    private String userId;
+    private String userPassword;
+    private String userAddr1;
+    private String userAddr2;
+    private String userTel;
+    private String userPhone;
 
-    public static MemberDTO memberDTO(MemberEntity memberEntity){
-        MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setId(memberEntity.getId());
-        memberDTO.setMemberId(memberEntity.getMemberId());
-        memberDTO.setMemberPassword(memberEntity.getMemberPassword());
-        memberDTO.setMemberName(memberEntity.getMemberName());
-        memberDTO.setMemberAdress1(memberEntity.getMemberAdress1());
-        memberDTO.setMemberPhoneNum(memberEntity.getMemberPhoneNum());
-        return memberDTO;
-
-    }
 }

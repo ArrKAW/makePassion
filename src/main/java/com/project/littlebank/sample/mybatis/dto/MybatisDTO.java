@@ -11,5 +11,12 @@ public class MybatisDTO {
 
     private String aaa;
     private String bbb;
-
+    private Long cusNum;
+    private String cusName;
+    private String cusID;
+    private String cusPassword;
+    private String cusAddr1;
+    private String cusAddr2;
+    private String cusTel;
+    private String cusPhone;
 }
