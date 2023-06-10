@@ -1,4 +1,4 @@
-package com.project.littlebank.globals.configuration;
+package com.project.littleBank.globals.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

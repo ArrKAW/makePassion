@@ -3,41 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <title>회원가입 페이지</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 회원 정보를 입력해주세요!
 
-<form action="/signup.do" method="post">
+<form action="/signup/save" method="post">
   <div>
-    <label for="CUS_ID">아이디: </label>
-    <input id="CUS_ID" name="CUS_ID" type="text">
+    <label for="customerId">아이디: </label>
+    <input id="customerId" name="customerId" type="text" onblur="idDuplicate()">
+    <span id="id-dup-result"></span>
+
   </div>
   <div>
-    <label for="CUS_PASSWORD">패스워드: </label>
-    <input id="CUS_PASSWORD" name="CUS_PASSWORD" type="password">
+    <label for="customerPassword">패스워드: </label>
+    <input id="customerPassword" name="customerPassword" type="password">
   </div>
   <div>
-    <label for="CUS_NAME">이름: </label>
-    <input id="CUS_NAME" name="CUS_NAME" type="text">
+    <label for="customerName">이름: </label>
+    <input id="customerName" name="customerName" type="text">
   </div>
   <div>
-    <label for="CUS_ADDR1">주소지1: </label>
-    <input id="CUS_ADDR1" name="CUS_ADDR1" type="text">
+    <label for="customerAddr1">주소지1: </label>
+    <input id="customerAddr1" name="customerAddr1" type="text">
   </div>
   <div>
-    <label for="CUS_ADDR2">주소지2: </label>
-    <input id="CUS_ADDR2" name="CUS_ADDR2" type="text">
+    <label for="customerAddr2">주소지2: </label>
+    <input id="customerAddr2" name="customerAddr2" type="text">
   </div>
   <div>
-    <label for="CUS_TEL">전화번호: </label>
-    <input id="CUS_TEL" name="CUS_TEL" type="text">
+    <label for="customerTel">전화번호: </label>
+    <input id="customerTel" name="customerTel" type="text">
   </div>
   <div>
-    <label for="CUS_PHONE">핸드폰: </label>
-    <input id="CUS_PHONE" name="CUS_PHONE" type="text">
+    <label for="customerPhone">핸드폰: </label>
+    <input id="customerPhone" name="customerPhone" type="text">
   </div>
 
   <input type="submit" value="가입하기">
 </form>
 </body>
+<script th:inline = "javascript">
+  const idDuplicate = () => {
+    const id = document.getElementById("customerId").value;
+    const checkResult = document.getElementById("id-dup-result");
+    $.ajax({
+      type: "post",
+      url: "/signup/idCheck",
+      dataType: "text",
+      data: {
+        "customerId": id
+      },
+      success: function (result) {
+        if(result == "ok"){
+          checkResult.innerHTML = "사용가능한 아이디입니다.";
+          checkResult.style.color ="green";
+        }else {
+          checkResult.innerHTML = "사용중인 아이디입니다.";
+          checkResult.style.color = "red"
+        }
+      },
+      error: function (){
+        alert("ajax 실패");
+      }
+    })
+  }
+
+</script>
 </html>

@@ -1,10 +1,10 @@
-package com.project.littlebank.sample.mybatis.service;
+package com.project.littleBank.sample.mybatis.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.project.littlebank.sample.mybatis.dto.MybatisDTO;
-import com.project.littlebank.sample.mybatis.repository.MybatisRepository;
+import com.project.littleBank.sample.mybatis.dto.MybatisDTO;
+import com.project.littleBank.sample.mybatis.repository.MybatisRepository;
 
 @Service
 @RequiredArgsConstructor

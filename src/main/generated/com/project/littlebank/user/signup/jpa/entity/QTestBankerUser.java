@@ -19,25 +19,25 @@ public class QTestBankerUser extends EntityPathBase<TestBankerUser> {
 
     public static final QTestBankerUser testBankerUser = new QTestBankerUser("testBankerUser");
 
-    public final StringPath CUS_ADDR1 = createString("CUS_ADDR1");
+    public final StringPath cusAddr1 = createString("cusAddr1");
 
-    public final StringPath CUS_ADDR2 = createString("CUS_ADDR2");
+    public final StringPath cusAddr2 = createString("cusAddr2");
 
-    public final StringPath CUS_GRADE = createString("CUS_GRADE");
+    public final StringPath cusGrade = createString("cusGrade");
 
-    public final StringPath CUS_ID = createString("CUS_ID");
+    public final StringPath cusId = createString("cusId");
 
-    public final StringPath CUS_NAME = createString("CUS_NAME");
+    public final StringPath cusName = createString("cusName");
 
-    public final NumberPath<java.math.BigInteger> CUS_NUM = createNumber("CUS_NUM", java.math.BigInteger.class);
+    public final NumberPath<java.math.BigInteger> cusNum = createNumber("cusNum", java.math.BigInteger.class);
 
-    public final StringPath CUS_PASSWORD = createString("CUS_PASSWORD");
+    public final StringPath cusPassword = createString("cusPassword");
 
-    public final StringPath CUS_PHONE = createString("CUS_PHONE");
+    public final StringPath cusPhone = createString("cusPhone");
 
-    public final StringPath CUS_TEL = createString("CUS_TEL");
+    public final StringPath cusTel = createString("cusTel");
 
-    public final StringPath USE_YN = createString("USE_YN");
+    public final StringPath useYn = createString("useYn");
 
     public QTestBankerUser(String variable) {
         super(TestBankerUser.class, forVariable(variable));

@@ -1,4 +1,4 @@
-package com.project.littlebank.sample.jpa.controller;
+package com.project.littleBank.sample.jpa.controller;
 
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;

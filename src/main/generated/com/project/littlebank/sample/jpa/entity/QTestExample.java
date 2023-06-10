@@ -1,4 +1,4 @@
-package com.project.littlebank.sample.jpa.entity;
+package com.project.littleBank.sample.jpa.entity;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -15,7 +15,7 @@ import com.querydsl.core.types.Path;
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QTestExample extends EntityPathBase<TestExample> {
 
-    private static final long serialVersionUID = -1991155254L;
+    private static final long serialVersionUID = -447160854L;
 
     public static final QTestExample testExample = new QTestExample("testExample");
 
