@@ -13,5 +13,4 @@ public interface UserSignupRepository extends JpaRepository<TestBankerUser, BigI
     Optional<TestBankerUser> findByCusIdAndUseYn(String cusId, String useYn);
 
 
-
 }

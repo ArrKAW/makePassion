@@ -1,7 +1,6 @@
 package com.project.littleBank.user.signup.jpa.controller;
 
 import com.project.littleBank.user.signup.jpa.dto.CustomerRequestDTO;
-import com.project.littleBank.user.signup.jpa.entity.TestBankerUser;
 import com.project.littleBank.user.signup.jpa.service.UserSignupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,26 +16,25 @@ public class mainController {
     private final UserSignupService userSignupService;
 
     @GetMapping("/")
-    public String main() {
+    public String main(){
         return "main";
     }
 
     @GetMapping("/signup")
-    public String signup() {
+    public String signup(){
         return "signup";
     }
 
     @PostMapping("/signup/save")
-    public String SaveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
+    public String SaveTestBankerUser(CustomerRequestDTO customerRequestDTO){
 
         userSignupService.SaveTestBankerUser(customerRequestDTO);
         return "main";
     }
 
     //아이디 중복확인
-    @ResponseBody
     @PostMapping("/signup/idCheck")
-    public String idCheck(@RequestParam String customerId) {
+    public @ResponseBody String idCheck(@RequestParam String customerId){
         String checkResult = userSignupService.idCheck(customerId);
         return checkResult;
     }

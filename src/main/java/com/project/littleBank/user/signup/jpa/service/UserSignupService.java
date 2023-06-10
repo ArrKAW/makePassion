@@ -10,6 +10,5 @@ public interface UserSignupService {
     String idCheck(String customerId);
 
     String SignoutTestBankerUser(String customerId);
-
 }
 

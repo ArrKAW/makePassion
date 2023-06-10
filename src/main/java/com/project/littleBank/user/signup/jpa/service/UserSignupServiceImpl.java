@@ -23,8 +23,15 @@ public class UserSignupServiceImpl implements UserSignupService {
     @Override
     public void SaveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
 
-        TestBankerUser SaveTestBankerUserObj = new TestBankerUser(customerRequestDTO);
-        userSignupRepository.save(SaveTestBankerUserObj);
+        String idCheckResult = idCheck(customerRequestDTO.getCustomerId());
+        if("ok".equals(idCheckResult)) {
+            TestBankerUser SaveTestBankerUserObj = new TestBankerUser(customerRequestDTO);
+            userSignupRepository.save(SaveTestBankerUserObj);
+        }else{
+            String errorMessage = "사용중인 아이디입니다. 다른 아이디를 입력해주세요.";
+            String script = String.format("alert('%s');", errorMessage);
+            String ajaxResponse = String.format("showErrorMessage('%s');", errorMessage);
+        }
     }
 
     @Override
@@ -34,7 +41,7 @@ public class UserSignupServiceImpl implements UserSignupService {
         if (optionalTestBankerUser.isPresent()){
             return "no";
         }else{
-            return "ok";
+           return "ok";
         }
     }
 
@@ -50,5 +57,6 @@ public class UserSignupServiceImpl implements UserSignupService {
             return "no_exist_id";
         }
     }
+
 
 }
