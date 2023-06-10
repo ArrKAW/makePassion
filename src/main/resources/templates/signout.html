@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>회원탈퇴</title>
+    <title>회원탈퇴 페이지</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+아이디를 입력해주세요!
 
+<form action="/signout/signoutCheck" method="post">
+    <div>
+        <label for="customerId">아이디: </label>
+        <input id="customerId" name="customerId" type="text" onblur="updateUseYn()">
+        <span id="id-dup-result"></span>
+    </div>
+
+    <input type="submit" value="회원탈퇴하기">
+</form>
 </body>
+
+<script th:inline = "javascript">
+    const updateUseYn = () => {
+        const id = document.getElementById("customerId").value;
+
+        $.ajax({
+            type: "post",
+            url: "/signout/signoutCheck",
+            dataType: "text",
+            data: {
+                "customerId": id
+            },
+            success: function (result) {
+                if(result == "success"){
+                    alert("회원탈퇴가 되었습니다");
+                    window.location.href="/";
+                }else if(result == "no_exist_id"){
+                    alert("존재하지 않는 아이디입니다");
+                }
+            },
+            error: function (){
+                alert("ajax 실패");
+            }
+        })
+    }
+
+</script>
 </html>

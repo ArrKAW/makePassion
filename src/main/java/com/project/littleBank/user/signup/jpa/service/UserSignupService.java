@@ -8,5 +8,8 @@ public interface UserSignupService {
     void SaveTestBankerUser(CustomerRequestDTO customerRequestDTO);
 
     String idCheck(String customerId);
+
+    String SignoutTestBankerUser(String customerId);
+
 }
 

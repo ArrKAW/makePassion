@@ -12,7 +12,6 @@ public interface UserSignupRepository extends JpaRepository<TestBankerUser, BigI
     //db에서 사용중인 아이디 검색
     Optional<TestBankerUser> findByCusIdAndUseYn(String cusId, String useYn);
 
-    //db에서 아이디 검색
-    Optional<TestBankerUser> findByCusId(String cusId);
+
 
 }

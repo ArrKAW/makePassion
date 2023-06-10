@@ -39,5 +39,11 @@ public class TestBankerUser {
         this.cusPhone = customerRequestDTO.getCustomerPhone();
         this.useYn = "Y";
     }
+
+    public void setUseYn(String useYn) {
+        this.useYn = useYn;
+    }
+
+
 }
 

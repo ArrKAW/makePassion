@@ -23,19 +23,9 @@ public class UserSignupServiceImpl implements UserSignupService {
     @Override
     public void SaveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
 
-
-
         TestBankerUser SaveTestBankerUserObj = new TestBankerUser(customerRequestDTO);
         userSignupRepository.save(SaveTestBankerUserObj);
     }
-/*
-    @Override
-    public String findCusIdAndUseYn(String cusId, String useYn) {
-        Optional<TestBankerUser> byCusIdAndUseYn = userSignupRepository.findByCusIdAndUseYn(cusId, useYn);
-        TestBankerUser testBankerUser = byCusIdAndUseYn.orElseThrow(EntityNotFoundException::new);
-
-        return testBankerUser.getCusId();
-    }*/
 
     @Override
     public String idCheck(String customerId){
@@ -44,7 +34,20 @@ public class UserSignupServiceImpl implements UserSignupService {
         if (optionalTestBankerUser.isPresent()){
             return "no";
         }else{
-           return "ok";
+            return "ok";
+        }
+    }
+
+    @Override
+    public String SignoutTestBankerUser(String customerId){
+        Optional<TestBankerUser> optionalTestBankerUser = userSignupRepository.findByCusIdAndUseYn(customerId, "Y");
+        if (optionalTestBankerUser.isPresent()){
+            TestBankerUser testBankerUser = optionalTestBankerUser.get();
+            testBankerUser.setUseYn("N");
+            userSignupRepository.save(testBankerUser);
+            return "success";
+        }else{
+            return "no_exist_id";
         }
     }
 
