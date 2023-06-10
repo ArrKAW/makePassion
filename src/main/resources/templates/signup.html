@@ -7,6 +7,7 @@
 </head>
 <body>
 회원 정보를 입력해주세요!
+모든 입력은 필수입니다!!
 
 <form action="/signup/save" method="post" onsubmit="return validateForm()">
   <div>
@@ -16,8 +17,13 @@
 
   </div>
   <div>
-    <label for="customerPassword">패스워드: </label>
+    <label for="customerPassword">비밀번호: </label>
     <input id="customerPassword" name="customerPassword" type="password">
+  </div>
+  <div>
+    <label for="customerPasswordCheck">비밀번호확인: </label>
+    <input id="customerPasswordCheck" name="customerPasswordCheck" type="password" onblur="passwordCheck()">
+    <span id="password-check-result"></span>
   </div>
   <div>
     <label for="customerName">이름: </label>
@@ -40,13 +46,13 @@
     <input id="customerPhone" name="customerPhone" type="text">
   </div>
 
-  <input type="submit" value="가입하기">
+  <input type="submit" onclick="location.href='/';" value="가입하기">
 </form>
 </body>
 <script th:inline = "javascript">
   const idDuplicate = () => {
     const id = document.getElementById("customerId").value;
-    const checkResult = document.getElementById("id-dup-result");
+    const idCheckResult = document.getElementById("id-dup-result");
     $.ajax({
       type: "post",
       url: "/signup/idCheck",
@@ -54,13 +60,14 @@
       data: {
         "customerId": id
       },
+
       success: function (result) {
         if(result == "ok"){
-          checkResult.innerHTML = "사용가능한 아이디입니다.";
-          checkResult.style.color ="green";
+          idCheckResult.innerHTML = "사용가능한 아이디입니다.";
+          idCheckResult.style.color ="green";
         }else {
-          checkResult.innerHTML = "사용중인 아이디입니다.";
-          checkResult.style.color = "red"
+          idCheckResult.innerHTML = "사용중인 아이디입니다.";
+          idCheckResult.style.color = "red"
         }
       },
       error: function (){
@@ -68,17 +75,43 @@
       }
     })
   }
+
+  const passwordCheck = () => {
+    const password = document.getElementById("customerPassword").value;
+    const passwordCheck = document.getElementById("customerPasswordCheck").value;
+    const pwCheckResult = document.getElementById("password-check-result");
+
+    if(password === passwordCheck){
+      pwCheckResult.innerHTML = "비밀번호가 일치합니다";
+      pwCheckResult.style.color ="green";
+    }else {
+      pwCheckResult.innerHTML = "비밀번호가 일치하지 않습니다";
+      pwCheckResult.style.color = "red"
+    }
+  };
+
   const validateForm = () => {
     const id = document.getElementById("customerId").value;
-    const checkResult = document.getElementById("id-dup-result");
-    if(checkResult.style.color === "red"){
+    const idCheckResult = document.getElementById("id-dup-result");
+    const passwordCheck = document.getElementById("customerPasswordCheck").value;
+    const pwCheckResult = document.getElementById("password-check-result");
+
+    if(idCheckResult.style.color === "red" && passwordCheck !== document.getElementById("customerPassword").value) {
+      alert("사용중인 아이디입니다. 다른 아이디를 입력해주세요!\n비밀번호가 일치하지 않습니다. 다시 입력해주세요!");
+      document.getElementById("customerId").value = "";
+      document.getElementById("customerPasswordCheck").value = "";
+      return false;
+    }else if(passwordCheck !== document.getElementById("customerPassword").value) {
+      alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요!");
+      document.getElementById("customerPasswordCheck").value = "";
+      return false;
+    }else if(idCheckResult.style.color === "red"){
       alert("사용중인 아이디입니다. 다른 아이디를 입력해주세요!");
       document.getElementById("customerId").value = "";
       return false;
     }
-    return true;
+      return true;
   };
-
 
 </script>
 </html>
