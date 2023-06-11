@@ -1,3 +1,4 @@
+/*
 package com.project.littlebank.domain.member.entity;
 
 
@@ -18,10 +19,11 @@ import java.math.BigInteger;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_MEMBER_ENTITY")
-    @SequenceGenerator(name = "SEQ_MEMBER_ENTITY", sequenceName = "SEQ_MEMBER_ENTITY", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "Q_MEMBER_ENTITY")
+    @SequenceGenerator(name = "Q_MEMBER_ENTITY", sequenceName = "Q_MEMBER_ENTITY", allocationSize = 1)
     private BigInteger cusNum;
     private String cusName;
+
     private String cusGrade;
     private String cusId;
     private String cusPassword;
@@ -43,3 +45,4 @@ public class MemberEntity {
 
 
 }
+*/

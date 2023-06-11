@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.littlebank.domain.member.repository.MemberRepository">
+
+    <select id="getMember" parameterType="com.project.littlebank.domain.member.dto.MemberDTO" resultType="com.project.littlebank.domain.member.dto.MemberDTO">
+        select * from testbanker_User
+        where cus_Id = #{userId} and cus_Password = #{userPassword}
+    </select>
+
+    <update id="update1" parameterType="com.project.littlebank.domain.member.dto.MemberDTO">
+        update testbankerUser
+        set CUS_NAME=#{cusName},
+            CUS_PASSWORD=#{cusPassword},
+            CUS_ADDR1=#{cusAddr1},
+            CUS_ADDR2=#{cusAddr2},
+            CUS_TEL=#{cusTel},
+            CUS_PHONE=#{cusPhone}
+        where CUS_NUM=#{cusNum}
+    </update>
+
+
+</mapper>

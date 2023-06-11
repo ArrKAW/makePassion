@@ -8,7 +8,7 @@ public class PageController {
 
     @GetMapping("/main")
     public String mainPage(){
-        return "main";
+        return "check";
     }
 
 

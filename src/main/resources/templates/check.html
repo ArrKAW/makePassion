@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>check</title>
+</head>
+<body>
+    어서오세요 <p th:text="${sessionScope.userId}">님</p>
+    <button onclick="update()" >내정보 수정하기</button>
+    <a href="/member/update">내 정보 수정하기</a>
+
+</body>
+<script>
+    const update = () => {
+        location.href = "/member/update";
+    }
+</script>
+</html>

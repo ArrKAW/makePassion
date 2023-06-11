@@ -11,7 +11,7 @@ spring:
     url: jdbc:oracle:thin:@//119.205.217.251:1521/orcl
     username: ill
     password: ill
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    driver-class-name: oracle.jdbc.OracleDriver
   jpa:
     hibernate:
       #      절대로 건들지 안됌!!!!

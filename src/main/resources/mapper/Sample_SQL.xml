@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.project.littlebank.domain.member.repository.MemberRepository">
+<mapper namespace="gms.something.special.sample.mybatis.MybatisRepository">
 
-    <select id="getSelectOne" parameterType="com.project.littlebank.domain.member.dto.MemberDTO" resultType="MemberDTO">
-        select * from testbankerUser
-                 where cusId = #{userId} and cusPassword = #{userPw}
+    <insert id="save1" parameterType="gms.something.special.sample.mybatis.MybatisDTO">
+        insert into aaa( aaa, bbb)
+        values (#{aaa}, #{bbb})
+    </insert>
+
+    <select id="find1" resultType="String">
+        select a.bbb from aaa a
+        where a.aaa = #{aaa}
     </select>
-
-    <update id="update1" parameterType="com.project.littlebank.sample.mybatis.dto.MybatisDTO">
-        update testbankerUser
-        set CUS_NAME=#{cusName},
-            CUS_PASSWORD=#{cusPassword},
-            CUS_ADDR1=#{cusAddr1},
-            CUS_ADDR2=#{cusAddr2},
-            CUS_TEL=#{cusTel},
-            CUS_PHONE=#{cusPhone}
-        where CUS_NUM=#{cusNum}
-    </update>
-    
 
 </mapper>
