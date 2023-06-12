@@ -17,49 +17,49 @@ public class Banker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="B_SEQ")
-    private String bseq;
+    private String bankerSeq;
     @Column(name="B_ID")
-    private String bid;
+    private String bankerId;
     @Column(name="B_NAME")
-    private String bname;
+    private String bankerName;
     @Column(name="B_PWD")
-    private String bpwd;
+    private String bankerPwd;
     @Column(name="B_POSITION")
-    private String bposition;
+    private String bankerPosition;
     @Column(name="B_TEL")
-    private String btel;
+    private String bankerTel;
     @Column(name="USER_USE_YN")
-    private String useruseyn;
+    private String userUseYn;
     @Column(name="B_LAST_USE_TIME")
-    private Date blastusetime;
+    private Date bankerLastUseTime;
     @Column(name="REG_ID")
-    private String regid;
+    private String registerId;
     @Column(name="REG_DATE")
-    private Date regdate;
+    private Date registerDate;
     @Column(name="CHG_ID")
-    private String chgid;
+    private String changeId;
     @Column(name="CHG_DATE")
-    private Date chgdate;
+    private Date changeDate;
     @Column(name="DEPT")
-    private String dept;
+    private String bankerDept;
     @Column(name="BASIC_AUTH")
-    private String basicauth;
+    private String basicAuth;
 
     public Banker(BankerDTO bankerDTO){
-        this.bseq = bankerDTO.getBankerSeq();
-        this.bid = bankerDTO.getBankerId();
-        this.bname = bankerDTO.getBankerName();
-        this.bpwd = bankerDTO.getBankerPwd();
-        this.bposition = bankerDTO.getBankerPosition();
-        this.btel = bankerDTO.getBankerTel();
-        this.useruseyn = bankerDTO.getBanker_use_yn();
-        this.blastusetime = bankerDTO.getBanker_last_use_time();
-        this.regid = bankerDTO.getBanker_reg_id();
-        this.regdate = bankerDTO.getBanker_reg_date();
-        this.chgid = bankerDTO.getBanker_chg_id();
-        this.chgdate = bankerDTO.getBanker_chg_date();
-        this.dept = bankerDTO.getBanker_dept();
-        this.basicauth = bankerDTO.getBanker_basic_auth();
+        this.bankerSeq = bankerDTO.getSeq();
+        this.bankerId = bankerDTO.getId();
+        this.bankerName = bankerDTO.getName();
+        this.bankerPwd = bankerDTO.getPwd();
+        this.bankerPosition = bankerDTO.getPosition();
+        this.bankerTel = bankerDTO.getTel();
+        this.userUseYn = bankerDTO.getUseYn();
+        this.bankerLastUseTime = bankerDTO.getLastUseTime();
+        this.registerId = bankerDTO.getRegId();
+        this.registerDate = bankerDTO.getRegDate();
+        this.changeId = bankerDTO.getChgId();
+        this.changeDate = bankerDTO.getChgDate();
+        this.bankerDept = bankerDTO.getDept();
+        this.basicAuth = bankerDTO.getBasAuth();
     }
 
 }

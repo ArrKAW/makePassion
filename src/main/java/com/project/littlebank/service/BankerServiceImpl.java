@@ -22,7 +22,7 @@ public class BankerServiceImpl implements BankerService{
     @Override
     public boolean login(BankerDTO bankerDTO){
 
-        Banker findBanker = bankerRepository.findByBidAndBpwd(bankerDTO.getBankerId(), bankerDTO.getBankerPwd());
+        Banker findBanker = bankerRepository.findByBankerIdAndBankerPwd(bankerDTO.getId(), bankerDTO.getPwd());
 
         if(findBanker == null){
             return false;
@@ -33,7 +33,7 @@ public class BankerServiceImpl implements BankerService{
     @Override
     public Banker bankerProfile(String bankerId){
 
-        Banker findBanker = bankerRepository.findByBid(bankerId);
+        Banker findBanker = bankerRepository.findByBankerId(bankerId);
 
         return findBanker;
     }
@@ -41,13 +41,13 @@ public class BankerServiceImpl implements BankerService{
     @Override
     public void bankerUpdate(String bankerId, BankerDTO bankerDTO){
 
-        Banker findBanker = bankerRepository.findByBid(bankerId);
+        Banker findBanker = bankerRepository.findByBankerId(bankerId);
         BankerDTO updateBankerDTO = new BankerDTO(findBanker);
 
-        updateBankerDTO.setBankerName(bankerDTO.getBankerName());
-        updateBankerDTO.setBankerPosition(bankerDTO.getBankerPosition());
-        updateBankerDTO.setBankerTel(bankerDTO.getBankerTel());
-        updateBankerDTO.setBanker_dept(bankerDTO.getBanker_dept());
+        updateBankerDTO.setName(bankerDTO.getName());
+        updateBankerDTO.setPosition(bankerDTO.getPosition());
+        updateBankerDTO.setTel(bankerDTO.getTel());
+        updateBankerDTO.setDept(bankerDTO.getDept());
 
         Banker updateBanker = new Banker(updateBankerDTO);
 

@@ -30,7 +30,7 @@ public class BankerController {
         boolean loginResult = bankerService.login(bankerDTO);
 
         if(loginResult){
-            session.setAttribute("loginId", bankerDTO.getBankerId());
+            session.setAttribute("loginId", bankerDTO.getId());
             return "redirect:/banker/profile";
         }
         return "bankerLoginFail";

@@ -19,33 +19,33 @@ public class QBanker extends EntityPathBase<Banker> {
 
     public static final QBanker banker = new QBanker("banker");
 
-    public final StringPath basicauth = createString("basicauth");
+    public final StringPath bankerDept = createString("bankerDept");
 
-    public final StringPath bid = createString("bid");
+    public final StringPath bankerId = createString("bankerId");
 
-    public final DateTimePath<java.util.Date> blastusetime = createDateTime("blastusetime", java.util.Date.class);
+    public final DateTimePath<java.util.Date> bankerLastUseTime = createDateTime("bankerLastUseTime", java.util.Date.class);
 
-    public final StringPath bname = createString("bname");
+    public final StringPath bankerName = createString("bankerName");
 
-    public final StringPath bposition = createString("bposition");
+    public final StringPath bankerPosition = createString("bankerPosition");
 
-    public final StringPath bpwd = createString("bpwd");
+    public final StringPath bankerPwd = createString("bankerPwd");
 
-    public final StringPath bseq = createString("bseq");
+    public final StringPath bankerSeq = createString("bankerSeq");
 
-    public final StringPath btel = createString("btel");
+    public final StringPath bankerTel = createString("bankerTel");
 
-    public final DateTimePath<java.util.Date> chgdate = createDateTime("chgdate", java.util.Date.class);
+    public final StringPath basicAuth = createString("basicAuth");
 
-    public final StringPath chgid = createString("chgid");
+    public final DateTimePath<java.util.Date> changeDate = createDateTime("changeDate", java.util.Date.class);
 
-    public final StringPath dept = createString("dept");
+    public final StringPath changeId = createString("changeId");
 
-    public final DateTimePath<java.util.Date> regdate = createDateTime("regdate", java.util.Date.class);
+    public final DateTimePath<java.util.Date> registerDate = createDateTime("registerDate", java.util.Date.class);
 
-    public final StringPath regid = createString("regid");
+    public final StringPath registerId = createString("registerId");
 
-    public final StringPath useruseyn = createString("useruseyn");
+    public final StringPath userUseYn = createString("userUseYn");
 
     public QBanker(String variable) {
         super(Banker.class, forVariable(variable));
