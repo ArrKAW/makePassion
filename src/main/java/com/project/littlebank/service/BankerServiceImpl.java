@@ -49,8 +49,8 @@ public class BankerServiceImpl implements BankerService{
         updateBankerDTO.setBankerTel(bankerDTO.getBankerTel());
         updateBankerDTO.setBanker_dept(bankerDTO.getBanker_dept());
 
-        Banker upddateBanker = new Banker(updateBankerDTO);
+        Banker updateBanker = new Banker(updateBankerDTO);
 
-        bankerRepository.save(upddateBanker);
+        bankerRepository.save(updateBanker);
     }
 }

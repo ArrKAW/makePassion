@@ -20,12 +20,12 @@ public class BankerController {
 
     private final BankerService bankerService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @GetMapping("/login")
     public String bankerLoginPage(){
         return "bankerLoginForm";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping("/login")
     public String bankerLogin(BankerDTO bankerDTO, HttpSession session){
         boolean loginResult = bankerService.login(bankerDTO);
 
@@ -36,7 +36,7 @@ public class BankerController {
         return "bankerLoginFail";
     }
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @GetMapping("/profile")
     public String bankerProfile(HttpSession session){
         if(session.getAttribute("loginId") == null){
             return "noAuthority";
@@ -44,7 +44,7 @@ public class BankerController {
         return "bankerProfile";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET )
+    @GetMapping("/logout")
     public String bankerLogout(HttpServletRequest request){
         HttpSession isLogin = request.getSession(false);
         if(isLogin != null){
@@ -53,7 +53,7 @@ public class BankerController {
         return "redirect:/banker/login";
     }
 
-    @RequestMapping(value = "/profile/update", method = RequestMethod.GET)
+    @GetMapping("/profile/update")
     public String bankerUpdatePage(HttpServletRequest request, HttpSession session, Model model){
         HttpSession isLogin = request.getSession(false);
         if(isLogin == null){
@@ -65,7 +65,7 @@ public class BankerController {
         return "bankerUpdate";
     }
 
-    @RequestMapping(value = "/profile/update", method = RequestMethod.POST)
+    @PostMapping("/profile/update")
     public String bankerUpdate(HttpSession session, BankerDTO bankerDTO){
         bankerService.bankerUpdate((String)session.getAttribute("loginId"), bankerDTO);
         return "redirect:/banker/profile";
