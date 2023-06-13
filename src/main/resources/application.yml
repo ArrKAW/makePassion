@@ -5,6 +5,9 @@ spring:
   profiles:
     active: local
   mvc:
+#    view:
+#      prefix: /WEB-INF/views/
+#      suffix: .jsp
     path match:
       matching-strategy: ant_path_matcher
   datasource:

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.littlebank.sample.mybatis.dao.TestDAO">
+
+    <!-- 조회 -->
+    <select id="listBank" resultType="com.project.littlebank.sample.mybatis.dto.TestEntity">
+        select B_SEQ
+             , B_ID
+             , B_PWD
+             , B_NAME
+             , B_POSITION
+             , B_TEL
+             , USER_USE_YN
+             , B_LAST_USE_TIME
+             , REG_ID
+             , REG_DATE
+             , CHG_ID
+             , CHG_DATE
+             , DEPT
+             , BASIC_AUTH
+        from TESTBANKER
+    </select>
+</mapper>
+
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+        <mapper namespace="com.project.littlebank.sample.mybatis.dao.TestDAO">
+
+            &lt;!&ndash; 조회 &ndash;&gt;
+            <select id="listBank" resultType="com.project.littlebank.sample.mybatis.dto.TestEntity">
+                select *
+                from TESTBANKER
+                where B_SEQ = #{B_SEQ}
+                    B_ID = #{B_ID}
+                    B_PWD = #{B_PWD}
+                    B_NAME = #{B_NAME}
+                    B_POSITION = #{B_POSITION}
+                    B_TEL = #{B_TEL}
+                    USER_USE_YN = #{USER_USE_YN}
+                    B_LAST_USE_TIME = #{B_LAST_USE_TIME}
+                    REG_ID = #{REG_ID}
+                    REG_DATE = #{REG_DATE}
+                    CHG_ID = #{CHG_ID}
+                    CHG_DATE = #{CHG_DATE}
+                    DEPT = #{DEPT}
+                    BASIC_AUTH = #{BASIC_AUTH}
+            </select>
+        </mapper>-->
