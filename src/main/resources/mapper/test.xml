@@ -3,26 +3,40 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.project.littlebank.sample.mybatis.dao.TestDAO">
 
-    <!-- 조회 -->
-    <select id="listBank" resultType="com.project.littlebank.sample.mybatis.dto.TestEntity">
-        select B_SEQ
+<!-- 레포지토리가 db와 연결된 장소를 뜻하므로 mapper는 무조건 repository와 연결해야한다.-->
+
+<mapper namespace="com.project.littlebank.sample.mybatis.repository.TestRepository">
+
+    <!-- 회원 가입은 db에 정보를 저장 하는 과정이므로 insert 사용 -->
+
+    <insert id="insertBanker" >
+        insert into TESTBANKER
+            (
+             B_SEQ
              , B_ID
              , B_PWD
              , B_NAME
              , B_POSITION
              , B_TEL
              , USER_USE_YN
-             , B_LAST_USE_TIME
              , REG_ID
              , REG_DATE
-             , CHG_ID
-             , CHG_DATE
              , DEPT
-             , BASIC_AUTH
-        from TESTBANKER
-    </select>
+            )
+        values (
+                #{bSeq}
+                ,#{bId}
+                ,#{bPwd}
+                ,#{bName}
+                ,#{bPosition}
+                ,#{bTel}
+                ,#{userUseYn}
+                ,#{regId}
+                ,now()
+                ,#{dept}
+               )
+    </insert>
 </mapper>
 
 
