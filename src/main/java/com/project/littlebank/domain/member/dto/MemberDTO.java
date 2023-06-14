@@ -16,46 +16,46 @@ public class MemberDTO {
     private String userTel; /*회원 전화번호*/
     private String userPhone; /*회원 핸드폰번호*/
 
-    public String getUserName(){
+    public String getuserName(){
         return userName;
     }
-    public String getUserId(){
+    public String getuserId(){
         return userId;
     }
-    public String getUserPassword(){
+    public String getuserPassword(){
         return userPassword;
     }
-    public String getUserAddr1(){
+    public String getuserAddr1(){
         return userAddr1;
     }
-    public String getUserAddr2(){
+    public String getuserAddr2(){
         return userAddr2;
     }
-    public String getUserTel(){
+    public String getuserTel(){
         return userTel;
     }
-    public String getUserPhone(){
+    public String getuserPhone(){
         return userPhone;
     }
-    public void setUserName(String userName){
+    public void setuserName(String userName){
         this.userName = userName;
     }
-    public void setUserId(String userId){
+    public void setuserId(String userId){
         this.userId = userId;
     }
-    public void setUserPassword(String userPassword){
+    public void setuserPassword(String userPassword){
         this.userPassword = userPassword;
     }
-    public void setUserAddr1(String userAddr1){
+    public void setuserAddr1(String userAddr1){
         this.userAddr1 = userAddr1;
     }
-    public void setUserAddr2(String userAddr2){
+    public void setuserAddr2(String userAddr2){
         this.userAddr2 = userAddr2;
     }
-    public void setUserTel(String userTel){
+    public void setuserTel(String userTel){
         this.userTel = userTel;
     }
-    public void setUserPhone(String userPhone){
+    public void setuserPhone(String userPhone){
         this.userPhone = userPhone;
     }
 }

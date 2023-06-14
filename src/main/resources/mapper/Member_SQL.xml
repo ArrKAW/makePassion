@@ -3,7 +3,7 @@
 
 <mapper namespace="com.project.littlebank.domain.member.repository.MemberRepository">
 
-    <select id="getMember" parameterType="com.project.littlebank.domain.member.dto.MemberDTO" resultType="com.project.littlebank.domain.member.dto.MemberDTO">
+    <select id="login" parameterType="com.project.littlebank.domain.member.dto.MemberDTO" resultType="MemberDTO">
         select * from testbanker_User
         where cus_Id = #{userId} and cus_Password = #{userPassword}
     </select>

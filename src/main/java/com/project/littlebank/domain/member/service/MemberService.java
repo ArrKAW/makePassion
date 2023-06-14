@@ -1,7 +1,12 @@
-/*
 package com.project.littlebank.domain.member.service;
 
+import com.project.littlebank.domain.member.dto.MemberDTO;
+import com.project.littlebank.domain.member.repository.MemberRepository;
+
+import javax.inject.Inject;
+
 public interface MemberService {
-    public String getMember(String userId, String userPassword) throws Exception;
+    /*MemberDTO getMember(String userId, String userPassword);*/
+
+    boolean login(MemberDTO memberDTO);
 }
-*/

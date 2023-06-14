@@ -1,6 +1,7 @@
 package com.project.littlebank.domain.member.controller;
 
 import com.project.littlebank.domain.member.dto.MemberDTO;
+import com.project.littlebank.domain.member.service.MemberService;
 import com.project.littlebank.domain.member.service.MemberServicelmpl;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -16,20 +17,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MemberController {
     @Autowired
-    private final MemberServicelmpl memberService;
+    private final MemberService memberService;
 
-    @GetMapping("/home")
+    @GetMapping("member/home")
+
     public String home() {
+
         return "home";
     }
-    @GetMapping("/login")
-    public String loginForm() {
-
-        return "login";
+    @GetMapping("member/login")
+    public void getMember() throws Exception {
     }
-    @PostMapping("/login")
-    public String getMember(MemberDTO memberDTO, HttpSession session) throws Exception{
-        memberDTO = memberService.getMember(memberDTO);
+    @PostMapping("member/login")
+    public String memberLogin(MemberDTO memberDTO, HttpSession session) throws Exception{
+        boolean loginResult = memberService.login(memberDTO);
         if(memberDTO !=null) {
             session.setAttribute("userId",memberDTO);
         }
