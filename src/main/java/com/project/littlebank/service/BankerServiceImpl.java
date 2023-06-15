@@ -3,14 +3,9 @@ package com.project.littlebank.service;
 import com.project.littlebank.dto.BankerDTO;
 import com.project.littlebank.entity.Banker;
 import com.project.littlebank.repository.BankerMyBatisRepository;
-import com.project.littlebank.repository.BankerRepository;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +18,7 @@ public class BankerServiceImpl implements BankerService{
     @Override
     public boolean login(BankerDTO bankerDTO){
 
-        Banker findBanker = bankerMyBatisRepository.bankerLogin(bankerDTO);
+        Banker findBanker = bankerMyBatisRepository.login(bankerDTO);
 
         if(findBanker == null){
             return false;

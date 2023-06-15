@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Banker">
+<mapper namespace="com.project.littlebank.repository.BankerMyBatisRepository">
     <resultMap type = "com.project.littlebank.entity.Banker" id="bankerEntity">
         <id column="B_SEQ" property="bankerSeq" />
         <result column="B_ID" property="bankerId" />
