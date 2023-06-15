@@ -1,11 +1,11 @@
 
-package com.project.littleBank.user.signup.jpa.service;
+package com.project.littlebank.user.signup.jpa.service;
 
 
-import com.project.littleBank.user.signup.jpa.dto.CustomerRequestDTO;
+import com.project.littlebank.user.signup.jpa.dto.CustomerRequestDTO;
+import com.project.littlebank.user.signup.jpa.entity.TestBankerUser;
+import com.project.littlebank.user.signup.jpa.repository.UserSignupRepository;
 
-import com.project.littleBank.user.signup.jpa.entity.TestBankerUser;
-import com.project.littleBank.user.signup.jpa.repository.UserSignupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,12 +21,12 @@ public class UserSignupServiceImpl implements UserSignupService {
     private final UserSignupRepository userSignupRepository;
 
     @Override
-    public void SaveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
+    public void saveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
 
         String idCheckResult = idCheck(customerRequestDTO.getCustomerId());
         if("ok".equals(idCheckResult)) {
-            TestBankerUser SaveTestBankerUserObj = new TestBankerUser(customerRequestDTO);
-            userSignupRepository.save(SaveTestBankerUserObj);
+            TestBankerUser saveTestBankerUserObj = new TestBankerUser(customerRequestDTO);
+            userSignupRepository.save(saveTestBankerUserObj);
         }else{
             String errorMessage = "사용중인 아이디입니다. 다른 아이디를 입력해주세요.";
             String script = String.format("alert('%s');", errorMessage);
@@ -46,7 +46,7 @@ public class UserSignupServiceImpl implements UserSignupService {
     }
 
     @Override
-    public String SignoutTestBankerUser(String customerId){
+    public String signoutTestBankerUser(String customerId){
         Optional<TestBankerUser> optionalTestBankerUser = userSignupRepository.findByCusIdAndUseYn(customerId, "Y");
         if (optionalTestBankerUser.isPresent()){
             TestBankerUser testBankerUser = optionalTestBankerUser.get();

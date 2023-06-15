@@ -1,7 +1,5 @@
-package com.project.littleBank.user.signup.jpa.dto;
+package com.project.littlebank.user.signup.jpa.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

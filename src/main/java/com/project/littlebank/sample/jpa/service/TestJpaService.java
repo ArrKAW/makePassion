@@ -1,6 +1,6 @@
-package com.project.littleBank.sample.jpa.service;
+package com.project.littlebank.sample.jpa.service;
 
-import com.project.littleBank.sample.jpa.entity.TestExample;
+import com.project.littlebank.sample.jpa.entity.TestExample;
 
 public interface TestJpaService {
 

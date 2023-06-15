@@ -1,6 +1,6 @@
-package com.project.littleBank.sample.mybatis.service;
+package com.project.littlebank.sample.mybatis.service;
 
-import com.project.littleBank.sample.mybatis.dto.MybatisDTO;
+import com.project.littlebank.sample.mybatis.dto.MybatisDTO;
 
 public interface MybatisService {
 

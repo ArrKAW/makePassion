@@ -1,6 +1,6 @@
-package com.project.littleBank.user.signup.jpa.repository;
+package com.project.littlebank.user.signup.jpa.repository;
 
-import com.project.littleBank.user.signup.jpa.entity.TestBankerUser;
+import com.project.littlebank.user.signup.jpa.entity.TestBankerUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.math.BigInteger;

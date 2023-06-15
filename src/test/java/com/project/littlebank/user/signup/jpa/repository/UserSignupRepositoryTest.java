@@ -1,6 +1,6 @@
-package com.project.littleBank.user.signup.jpa.repository;
+package com.project.littlebank.user.signup.jpa.repository;
 
-import com.project.littleBank.user.signup.jpa.entity.TestBankerUser;
+import com.project.littlebank.user.signup.jpa.entity.TestBankerUser;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

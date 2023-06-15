@@ -1,7 +1,7 @@
-package com.project.littleBank.user.signup.jpa.controller;
+package com.project.littlebank.user.signup.jpa.controller;
 
-import com.project.littleBank.user.signup.jpa.dto.CustomerRequestDTO;
-import com.project.littleBank.user.signup.jpa.service.UserSignupService;
+import com.project.littlebank.user.signup.jpa.dto.CustomerRequestDTO;
+import com.project.littlebank.user.signup.jpa.service.UserSignupService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -30,9 +30,9 @@ public class mainController {
     }
 
     @PostMapping("/signup/save")
-    public String SaveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
+    public String saveTestBankerUser(CustomerRequestDTO customerRequestDTO) {
 
-        userSignupService.SaveTestBankerUser(customerRequestDTO);
+        userSignupService.saveTestBankerUser(customerRequestDTO);
         return "redirect:/";
     }
 
@@ -51,8 +51,8 @@ public class mainController {
 
     @ResponseBody
     @PostMapping("/signout/signoutCheck")
-    public String SignoutTestBankerUser(@RequestParam String customerId) {
-        String signoutResult = userSignupService.SignoutTestBankerUser(customerId);
+    public String signoutTestBankerUser(@RequestParam String customerId) {
+        String signoutResult = userSignupService.signoutTestBankerUser(customerId);
         return signoutResult;
     }
 

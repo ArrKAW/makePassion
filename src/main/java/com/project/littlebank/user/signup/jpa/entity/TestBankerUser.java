@@ -1,6 +1,7 @@
-package com.project.littleBank.user.signup.jpa.entity;
+package com.project.littlebank.user.signup.jpa.entity;
 
-import com.project.littleBank.user.signup.jpa.dto.CustomerRequestDTO;
+import com.project.littlebank.user.signup.jpa.converter.Aes256Converter;
+import com.project.littlebank.user.signup.jpa.dto.CustomerRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,6 +21,7 @@ public class TestBankerUser {
     private String cusName;
     private String cusGrade;
     private String cusId;
+    @Convert(converter = Aes256Converter.class)
     private String cusPassword;
     private String cusAddr1;
     private String cusAddr2;
