@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Banker">
+    <resultMap type = "com.project.littlebank.entity.Banker" id="bankerEntity">
+        <id column="B_SEQ" property="bankerSeq" />
+        <result column="B_ID" property="bankerId" />
+        <result column="B_NAME" property="bankerName" />
+        <result column="B_PWD" property="bankerPwd" />
+        <result column="B_POSITION" property="bankerPosition" />
+        <result column="B_TEL" property="bankerTel" />
+        <result column="USER_USE_YN" property="userUseYn" />
+        <result column="B_LAST_USE_TIME" property="bankerLastUseTime" />
+        <result column="REG_ID" property="registerId" />
+        <result column="REG_DATE" property="registerDate" />
+        <result column="CHG_ID" property="changeId" />
+        <result column="CHG_DATE" property="changeDate" />
+        <result column="DEPT" property="bankerDept" />
+        <result column="BASIC_AUTH" property="basicAuth" />
+    </resultMap>
+    <select id="login" parameterType="com.project.littlebank.dto.BankerDTO" resultMap="bankerEntity">
+        select * from TESTBANKER where b_id = #{id} and b_pwd = #{pwd}
+    </select>
+    <select id="find" parameterType="String" resultMap="bankerEntity">
+        select * from TESTBANKER where b_id = #{bankerId}
+    </select>
+    <update id="update" parameterType="com.project.littlebank.entity.Banker">
+        update TESTBANKER set b_name = #{bankerName}, b_position = #{bankerPosition}, b_tel = #{bankerTel}, dept = #{bankerDept} where b_seq = #{bankerSeq}
+    </update>
+</mapper>

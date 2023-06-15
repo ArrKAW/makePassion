@@ -36,14 +36,14 @@ decorator.datasource.p6spy:
   logging: slf4j
 
 #mybatis 설정
-#mybatis:
-#  configuration:
-#    multiple-result-sets-enabled: false
-#    map-underscore-to-camel-case: true
-#    call-setters-on-nulls: true
-#    jdbc-type-for-null: varchar
-#    default-fetch-size: 500
-#  mapper-locations: mapper/*.xml
+mybatis:
+  configuration:
+    multiple-result-sets-enabled: false
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    jdbc-type-for-null: varchar
+    default-fetch-size: 500
+  mapper-locations: mapper/*.xml
 
 
 

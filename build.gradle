@@ -43,6 +43,9 @@ dependencies {
 
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//orai18n.jar 추가
+	implementation group: 'com.oracle.ojdbc', name: 'orai18n', version: '19.3.0.0'
 }
 
 tasks.named('test') {

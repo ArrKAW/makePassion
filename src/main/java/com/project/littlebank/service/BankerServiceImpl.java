@@ -2,6 +2,7 @@ package com.project.littlebank.service;
 
 import com.project.littlebank.dto.BankerDTO;
 import com.project.littlebank.entity.Banker;
+import com.project.littlebank.repository.BankerMyBatisRepository;
 import com.project.littlebank.repository.BankerRepository;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -16,13 +17,13 @@ import java.util.Optional;
 @Transactional
 public class BankerServiceImpl implements BankerService{
 
-    private final BankerRepository bankerRepository;
+    private final BankerMyBatisRepository bankerMyBatisRepository;
 
 
     @Override
     public boolean login(BankerDTO bankerDTO){
 
-        Banker findBanker = bankerRepository.findByBankerIdAndBankerPwd(bankerDTO.getId(), bankerDTO.getPwd());
+        Banker findBanker = bankerMyBatisRepository.bankerLogin(bankerDTO);
 
         if(findBanker == null){
             return false;
@@ -33,7 +34,7 @@ public class BankerServiceImpl implements BankerService{
     @Override
     public Banker bankerProfile(String bankerId){
 
-        Banker findBanker = bankerRepository.findByBankerId(bankerId);
+        Banker findBanker = bankerMyBatisRepository.find(bankerId);
 
         return findBanker;
     }
@@ -41,7 +42,7 @@ public class BankerServiceImpl implements BankerService{
     @Override
     public void bankerUpdate(String bankerId, BankerDTO bankerDTO){
 
-        Banker findBanker = bankerRepository.findByBankerId(bankerId);
+        Banker findBanker = bankerMyBatisRepository.find(bankerId);
         BankerDTO updateBankerDTO = new BankerDTO(findBanker);
 
         updateBankerDTO.setName(bankerDTO.getName());
@@ -50,7 +51,6 @@ public class BankerServiceImpl implements BankerService{
         updateBankerDTO.setDept(bankerDTO.getDept());
 
         Banker updateBanker = new Banker(updateBankerDTO);
-
-        bankerRepository.save(updateBanker);
+        bankerMyBatisRepository.update(updateBanker);
     }
 }
