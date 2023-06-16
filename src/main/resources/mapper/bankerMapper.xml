@@ -18,13 +18,13 @@
         <result column="DEPT" property="bankerDept" />
         <result column="BASIC_AUTH" property="basicAuth" />
     </resultMap>
-    <select id="login" parameterType="com.project.littlebank.dto.BankerDTO" resultMap="bankerEntity">
+    <select id="login" parameterType="bankerDTO" resultMap="bankerEntity">
         select * from TESTBANKER where b_id = #{id} and b_pwd = #{pwd}
     </select>
     <select id="find" parameterType="String" resultMap="bankerEntity">
         select * from TESTBANKER where b_id = #{bankerId}
     </select>
-    <update id="update" parameterType="com.project.littlebank.entity.Banker">
+    <update id="update" parameterType="banker">
         update TESTBANKER set b_name = #{bankerName}, b_position = #{bankerPosition}, b_tel = #{bankerTel}, dept = #{bankerDept} where b_seq = #{bankerSeq}
     </update>
 </mapper>
